@@ -18,7 +18,7 @@ stdin.on('data', (key) => {
     const entry = Number(key); // converts key to a number rather than "9" for example
     const delay = entry * 1000; // converts entry into an amount of miliseconds
 
-    console.log(`setting timer for ${key} seconds...`)
+    console.log(`setting timer for ${key} seconds...`);
   
     setTimeout(() => { // schedules a beep notification after the delay given by the entry.
       process.stdout.write('\x07');
