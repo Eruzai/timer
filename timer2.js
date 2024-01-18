@@ -9,22 +9,13 @@ stdin.on('data', (key) => {
     console.log("Thanks for using me, ciao!");
     process.exit();
   }
-  process.stdout.write('.');
 });
 
-
-// const validateEntry = function(key) { // validates entry, returning false if NAN or not a number between 1 and 9
-//   if (isNaN(Number(key)) || Number(key) < 0) {
-//     console.log(`${key} isn't a valid entry. Please input a number between 1 and 9!`)
-//     return false;
-//   }
-// };
-
 stdin.on('data', (key) => {
-  if (key === 'b') {
+  if (key === 'b') { // makes the system beep if key pressed is 'b'
     process.stdout.write('\x07');
-  } else if (0 < Number(key) < 9) {
-    const entry = Number(key); // converts valid entry to a number rather than "9" for example
+  } else if (0 < Number(key) && Number(key) < 10) { // checks if key pressed was 1 to 9
+    const entry = Number(key); // converts key to a number rather than "9" for example
     const delay = entry * 1000; // converts entry into an amount of miliseconds
 
     console.log(`setting timer for ${key} seconds...`)
